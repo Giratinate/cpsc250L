@@ -1,4 +1,4 @@
----
+
 
 ## Step 7: Lab 1 checkoff file
 
@@ -29,11 +29,11 @@ GitHub username: ____________________________
 
 Ask one of the following:
 
-- What is the difference between the instructor's repository and your fork?
-- What does `commit` mean?
-- What does `push` mean?
-- Where is your code stored locally?
-- Where is your code stored remotely?
+- What is the difference between the instructor's repository and your fork? Repository is the template available for every student. My fork is my individual code that I can edit freely without effecting other students' forks.
+- What does `commit` mean? Commit saves my changes to the local repository, but leaves the remote repository untouched.
+- What does `push` mean? Push saves my changes to the remote repository.
+- Where is your code stored locally? My PycharmProjects folder.
+- Where is your code stored remotely? Github.
 
 Notes:
 
