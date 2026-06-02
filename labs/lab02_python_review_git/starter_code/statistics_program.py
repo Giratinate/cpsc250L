@@ -30,6 +30,11 @@ def read_temperatures(filename):
     temperatures = []
 
     # TODO: Open the file and read each line.
+    with open(filename, "r") as f:
+        for line in f:
+            if line != "\n":
+                number = float(line.strip())
+                temperatures.append(number)
     # TODO: Convert each non-blank line to a float.
     # TODO: Append each temperature to the temperatures list.
 
