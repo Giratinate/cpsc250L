@@ -25,10 +25,10 @@ def count_above_threshold(values, threshold):
 
 def print_report(values):
     print("Temperature Report")
-    print(f"Average: {calculate_average(values):.2f}")
-    print(f"Maximum: {find_maximum(values):.2f}")
-    print(f"Minimum: {find_minimum(values):.2f}")
-    print(f"Count: {count_above_threshold(values, 75):.2f}")
+    print(f"Average temperature: {calculate_average(values):.2f}")
+    print(f"Maximum temperature: {find_maximum(values):.2f}")
+    print(f"Minimum temperature: {find_minimum(values):.2f}")
+    print(f"Temperatures above 75: {count_above_threshold(values, 75):.2f}")
     pass
 
 def main():
