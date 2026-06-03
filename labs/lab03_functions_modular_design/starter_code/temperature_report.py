@@ -14,7 +14,7 @@ def read_temperatures(filename):
     # Returns temperatures
     return temperatures
 
-# Calculates average
+# Calculates the average
 def calculate_average(values):
     # Returns the average by dividing the sum of the values with the length of the list
     return sum(values) / len(values)
