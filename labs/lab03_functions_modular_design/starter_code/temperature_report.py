@@ -11,10 +11,10 @@ def calculate_average(values):
     return sum(values) / len(values)
 
 def find_maximum(values):
-    pass
+    return max(values)
 
 def find_minimum(values):
-    pass
+    return min(values)
 
 def count_above_threshold(values, threshold):
     pass
@@ -22,6 +22,8 @@ def count_above_threshold(values, threshold):
 def print_report(values):
     print("Temperature Report")
     print(f"Average: {calculate_average(values):.2f}")
+    print(f"Maximum: {find_maximum(values):.2f}")
+    print(f"Minimum: {find_minimum(values):.2f}")
     pass
 
 def main():
