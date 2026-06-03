@@ -10,7 +10,6 @@ Complete the TODO sections below.
 
 from pathlib import Path
 
-
 def read_temperatures(filename):
     """
     Read temperature values from a text file.
@@ -51,6 +50,7 @@ def compute_average(values):
     # TODO: Replace this with a correct average calculation.
     average = sum / len(values)
     return average
+
 
 
 def compute_minimum(values):
