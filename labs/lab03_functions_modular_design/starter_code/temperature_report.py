@@ -17,13 +17,18 @@ def find_minimum(values):
     return min(values)
 
 def count_above_threshold(values, threshold):
-    pass
+    cnt = 0
+    for value in values:
+        if value > threshold:
+            cnt = cnt + 1
+    return cnt
 
 def print_report(values):
     print("Temperature Report")
     print(f"Average: {calculate_average(values):.2f}")
     print(f"Maximum: {find_maximum(values):.2f}")
     print(f"Minimum: {find_minimum(values):.2f}")
+    print(f"Count: {count_above_threshold(values, 75):.2f}")
     pass
 
 def main():
