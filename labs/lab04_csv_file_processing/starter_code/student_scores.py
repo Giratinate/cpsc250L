@@ -3,16 +3,19 @@
 # Complete this program so that it reads quiz score data from a CSV file,
 # cleans the data, computes student averages, and prints a report.
 
-
+#This
 def clean_score(score_text):
     """
     Convert a score string into an integer.
 
     If the score is missing or invalid, return None.
     """
-    e = score_text.strip()
-    if e.isdigit():
-        return int(e)
+    #First step is to strip any white space from the score
+    score = score_text.strip()
+    #If the score is a digit, then it is returned as an integer
+    if score.isdigit():
+        return int(score)
+    #If the score is not an integer, then None is returned
     else:
         return None
 
@@ -63,7 +66,7 @@ def read_scores(filename):
         ...
     ]
     """
-    che = []
+    records = []
     with open(filename, "r") as f:
         # Reads a line of open file
         for line in f:
@@ -72,9 +75,8 @@ def read_scores(filename):
                 continue
             score1 = (clean_score(list1[1]), clean_score(list1[2]), clean_score(list1[3]))
             dict1 = {"name": list1[0], "scores": score1, "average": calculate_average(score1)}
-            print(dict1)
-            che.append(dict1)
-    return che
+            records.append(dict1)
+    return records
 
 
 def letter_grade(average):
@@ -90,15 +92,29 @@ def letter_grade(average):
 
     If the average is None, return "N/A".
     """
-    pass
+    if average >= 87:
+        return "A"
+    elif average >= 77:
+        return "B"
+    elif average >= 67:
+        return "C"
+    elif average >= 57:
+        return "D"
+    elif average is None:
+        return "N/A"
+    else:
+        return "F"
 
 
 def print_student_report(records):
     """
     Print one line of output for each student.
     """
-    pass
-
+    for record in records:
+        name = record["name"]
+        avg = record["average"]
+        grade = letter_grade(avg)
+        print(f"{name}: Average = {avg:.2f} Grade = {grade}")
 
 def print_class_summary(records):
     """
@@ -110,6 +126,21 @@ def print_class_summary(records):
         highest average
         lowest average
     """
+    students = 0
+    highest = 0
+    lowest = 200
+    avg = 0
+    for record in records:
+        students += 1
+        if record["average"] > highest:
+            highest = record["average"]
+        if record["average"] < lowest:
+            lowest = record["average"]
+        avg += record["average"]
+    print(f"Number of students: {students}")
+    print(f"Class average: {avg/students:.2f}")
+    print(f"Highest average: {highest:.2f}")
+    print(f"Lowest average: {lowest:.2f}")
     pass
 
 
