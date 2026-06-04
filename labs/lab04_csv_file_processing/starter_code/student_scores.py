@@ -10,8 +10,9 @@ def clean_score(score_text):
 
     If the score is missing or invalid, return None.
     """
-    if score_text.isdigit():
-        return int(score_text)
+    e = score_text.strip()
+    if e.isdigit():
+        return int(e)
     else:
         return None
 
@@ -30,9 +31,8 @@ def calculate_average(scores):
         else:
             avg += score
             valid += 1
-    avg = avg / valid
     if valid > 0:
-        return avg
+        return avg / valid
     else:
         return None
 
@@ -63,7 +63,18 @@ def read_scores(filename):
         ...
     ]
     """
-    pass
+    che = []
+    with open(filename, "r") as f:
+        # Reads a line of open file
+        for line in f:
+            list1 = line.strip().split(",")
+            if list1[0] == "name":
+                continue
+            score1 = (clean_score(list1[1]), clean_score(list1[2]), clean_score(list1[3]))
+            dict1 = {"name": list1[0], "scores": score1, "average": calculate_average(score1)}
+            print(dict1)
+            che.append(dict1)
+    return che
 
 
 def letter_grade(average):
