@@ -13,7 +13,7 @@ def clean_score(score_text):
     if score_text.isdigit():
         return int(score_text)
     else:
-        return "None"
+        return None
 
 
 def calculate_average(scores):
@@ -22,7 +22,19 @@ def calculate_average(scores):
 
     If the list is empty, return None.
     """
-    pass
+    avg = 0
+    valid = 0
+    for score in scores:
+        if score is None:
+            pass
+        else:
+            avg += score
+            valid += 1
+    avg = avg / valid
+    if valid > 0:
+        return avg
+    else:
+        return None
 
 
 def read_scores(filename):
@@ -98,6 +110,5 @@ def main():
     print_student_report(records)
     print()
     print_class_summary(records)
-
 
 main()
