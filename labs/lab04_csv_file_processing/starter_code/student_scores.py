@@ -10,7 +10,10 @@ def clean_score(score_text):
 
     If the score is missing or invalid, return None.
     """
-    pass
+    if score_text.isdigit():
+        return int(score_text)
+    else:
+        return "None"
 
 
 def calculate_average(scores):
