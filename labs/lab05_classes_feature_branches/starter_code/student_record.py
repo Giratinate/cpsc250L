@@ -38,8 +38,11 @@ class StudentRecord:
         If the student has no scores, return None.
         """
         total = 0
-        for score in self.scores:
-            total += score
+        if len(self.scores) == 0:
+            return None
+        else:
+            for score in self.scores:
+                total += score
         average = total / len(self.scores)
         return average
 
