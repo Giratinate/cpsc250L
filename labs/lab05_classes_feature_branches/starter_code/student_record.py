@@ -25,7 +25,10 @@ class StudentRecord:
         """
         if score > 100:
             print("Score denied")
-        self.scores.append(score)
+        elif score < 0:
+            print("Score denied")
+        else:
+            self.scores.append(score)
         pass
 
     def calculate_average(self):
