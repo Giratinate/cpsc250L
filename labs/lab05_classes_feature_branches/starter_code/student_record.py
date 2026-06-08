@@ -23,6 +23,8 @@ class StudentRecord:
 
         Only add scores between 0 and 100.
         """
+        if score > 100:
+            print("Score denied")
         self.scores.append(score)
         pass
 
