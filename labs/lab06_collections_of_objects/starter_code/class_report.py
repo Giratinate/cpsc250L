@@ -49,7 +49,11 @@ def class_average(students):
 
     Ignore students with no valid scores.
     """
-    pass
+    class_sum = 0
+    for student in students:
+        class_sum += student.calculate_average()
+    class_avg = class_sum / len(students)
+    return class_avg
 
 
 def find_highest_average_student(students):
@@ -70,13 +74,14 @@ def print_class_report(students):
     """
     Print all student records and a class summary.
     """
+    for student in students:
+        print(student)
+    print(f"Class average: {class_average(students):.2f}")
     pass
 
 
 def main():
     students = read_student_records("../data/student_scores.csv")
-    for student in students:
-        print(student)
     print_class_report(students)
 
 

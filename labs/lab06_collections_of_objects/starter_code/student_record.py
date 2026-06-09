@@ -20,12 +20,15 @@ class StudentRecord:
 
     def calculate_average(self):
         total = 0
+        cnt = 0
         if len(self.scores) == 0:
             return None
         else:
             for score in self.scores:
-                total += score
-        average = total / len(self.scores)
+                if score != None:
+                    total += score
+                    cnt += 1
+        average = total / cnt
         return average
 
     def highest_score(self):
