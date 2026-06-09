@@ -1,7 +1,4 @@
-# Lab 6: Collections of Objects
-
 from student_record import StudentRecord
-
 
 def clean_score(score_text):
     """
@@ -9,13 +6,40 @@ def clean_score(score_text):
 
     Return None if the score is missing or invalid.
     """
-    pass
+    score = score_text.strip()
+    # If the score is a digit, then it is returned as an integer
+    if score.isdigit():
+        return int(score)
+    # If the score is not an integer, then None is returned
+    else:
+        return None
 
 
 def read_student_records(filename):
     """
     Read the CSV file and return a list of StudentRecord objects.
     """
+    records = []
+    # Opens file
+    with open(filename, "r") as f:
+        # Reads a line of open file
+        for line in f:
+            # Strips whitespace and splits the lines before turning them into a list
+            list1 = line.strip().split(",")
+            # Skips first line since it will start with "name"
+            if list1[1] == "name":
+                continue
+            # Makes a list of scores, using the clean_score function to turn them into ints and Nones
+            score1 = (clean_score(list1[2]), clean_score(list1[3]), clean_score(list1[4]))
+            # Turns the list into a dictionary
+            record = StudentRecord(list1[1], list1[0])
+            for score in score1:
+                record.add_score(score)
+            # Adds list to scores
+            records.append(record)
+    # returns the list
+    return records
+
     pass
 
 
@@ -51,6 +75,8 @@ def print_class_report(students):
 
 def main():
     students = read_student_records("../data/student_scores.csv")
+    for student in students:
+        print(student)
     print_class_report(students)
 
 

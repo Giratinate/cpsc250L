@@ -10,8 +10,10 @@ class StudentRecord:
         self.scores = []
 
     def add_score(self, score):
-        if score > 100 or score < 0:
-            print("Score denied")
+        if score == None:
+            self.scores.append(None)
+        elif score > 100 or score < 0:
+            True
         else:
             self.scores.append(score)
         pass
