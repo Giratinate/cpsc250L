@@ -60,14 +60,26 @@ def find_highest_average_student(students):
     """
     Return the StudentRecord object with the highest average.
     """
-    pass
+    highest_score = 0
+    highest_name = None
+    for student in students:
+        if student.calculate_average() > highest_score:
+            highest_score = student.calculate_average()
+            highest_name = student.name
+    return highest_name, highest_score
 
 
 def find_lowest_average_student(students):
     """
     Return the StudentRecord object with the lowest average.
     """
-    pass
+    lowest_score = 100
+    lowest_name = None
+    for student in students:
+        if student.calculate_average() < lowest_score:
+            lowest_score = student.calculate_average()
+            lowest_name = student.name
+    return lowest_name, lowest_score
 
 
 def print_class_report(students):
@@ -77,6 +89,10 @@ def print_class_report(students):
     for student in students:
         print(student)
     print(f"Class average: {class_average(students):.2f}")
+    highest_name, highest_score = find_highest_average_student(students)
+    lowest_name, lowest_score = find_lowest_average_student(students)
+    print(f"Highest average: {highest_name} with {highest_score:.2f}")
+    print(f"Lowest average: {lowest_name} with {lowest_score:.2f}")
     pass
 
 
