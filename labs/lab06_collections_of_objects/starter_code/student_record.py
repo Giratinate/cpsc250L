@@ -10,19 +10,55 @@ class StudentRecord:
         self.scores = []
 
     def add_score(self, score):
+        if score > 100 or score < 0:
+            print("Score denied")
+        else:
+            self.scores.append(score)
         pass
 
     def calculate_average(self):
-        pass
+        total = 0
+        if len(self.scores) == 0:
+            return None
+        else:
+            for score in self.scores:
+                total += score
+        average = total / len(self.scores)
+        return average
 
     def highest_score(self):
-        pass
+        high = 0
+        if len(self.scores) == 0:
+            return None
+        else:
+            high = self.scores[0]
+            for score in self.scores:
+                if score > high:
+                    high = score
+        return high
 
     def lowest_score(self):
-        pass
+        if len(self.scores) == 0:
+            return None
+        else:
+            low = self.scores[0]
+            for score in self.scores:
+                if score < low:
+                    low = score
+        return low
 
     def letter_grade(self):
-        pass
+        average = self.calculate_average()
+        if average >= 87:
+            return "A"
+        elif average >= 77:
+            return "B"
+        elif average >= 67:
+            return "C"
+        elif average >= 57:
+            return "D"
+        else:
+            return "F"
 
     def __str__(self):
-        pass
+        return f"StudentRecord(name={self.name}, student_id={self.student_id}, scores={self.scores}"
