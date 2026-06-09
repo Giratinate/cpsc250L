@@ -5,7 +5,9 @@
 
 class StudentRecord:
     def __init__(self, name, student_id):
-        pass
+        self.name = name
+        self.student_id = student_id
+        self.scores = []
 
     def add_score(self, score):
         pass
