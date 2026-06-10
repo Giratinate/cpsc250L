@@ -16,9 +16,7 @@ class TimeDuration:
         """
         Return the total number of seconds represented by this duration.
         """
-        total_seconds = 0
-        total_seconds += self.hours * 3600 + self.minutes * 60 + self.seconds
-        return total_seconds
+        return (self.hours * 3600) + (self.minutes * 60) + self.seconds
 
     def __str__(self):
         """
