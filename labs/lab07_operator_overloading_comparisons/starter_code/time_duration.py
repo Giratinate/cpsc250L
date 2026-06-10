@@ -40,7 +40,7 @@ class TimeDuration:
         """
         Return True if this duration is shorter than the other duration.
         """
-        if other > self.total_seconds():
+        if other.total_seconds() > self.total_seconds():
             return True
         else:
             return False
