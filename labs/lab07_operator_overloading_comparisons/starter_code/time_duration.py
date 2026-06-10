@@ -31,7 +31,7 @@ class TimeDuration:
         """
         Return True if two TimeDuration objects represent the same duration.
         """
-        if other == self.total_seconds():
+        if other.total_seconds() == self.total_seconds():
             return True
         else:
             return False
@@ -40,10 +40,13 @@ class TimeDuration:
         """
         Return True if this duration is shorter than the other duration.
         """
-        pass
+        if other > self.total_seconds():
+            return True
+        else:
+            return False
 
     def __add__(self, other):
         """
         Return a new TimeDuration object that is the sum of this duration and the other duration.
         """
-        pass
+        return TimeDuration(self.hours + other.hours, self.minutes + other.minutes, self.seconds + other.seconds)
