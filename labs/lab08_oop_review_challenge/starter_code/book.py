@@ -31,10 +31,13 @@ class Book:
             return False
 
     def __str__(self):
-        return f"{self.name} by {self.author} ({self.year}) - {self.genre}, {self.pages} pages, rating: {self.rating}, stock: {self.amount}"
+        return f"{self.title} by {self.author} ({self.year}) - {self.genre}, {self.pages} pages, rating: {self.rating}, stock: {self.amount}"
 
     def __lt__(self, other):
         """
         Compare books alphabetically by title.
         """
-        pass
+        if self.title > other.title:
+            return True
+        else:
+            return False

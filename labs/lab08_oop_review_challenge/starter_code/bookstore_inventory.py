@@ -3,12 +3,20 @@
 from book import Book
 
 
-def create_inventory():
+def create_inventory(filename):
     """
     Read books from csv file, create and return a list of Book objects.
     """
     books = []
-
+    with open(filename, "r") as f:
+        # Reads a line of open file
+        for line in f:
+            list1 = line.split(",")
+            if list1[0] == "title":
+                continue
+            else:
+                books.append(Book(list1[0], list1[1], list1[2], list1[3], list1[4], list1[5]))
+    print(books[0])
     return books
 
 
@@ -48,7 +56,7 @@ def print_books(books):
 
 
 def main():
-    inventory = create_inventory()
+    inventory = create_inventory("../data/booklist.csv")
 
     print("Full Inventory")
     print("--------------")
