@@ -38,7 +38,7 @@ class Book:
         """
         Compare books alphabetically by title.
         """
-        if self.title > other.title:
+        if self.title < other.title:
             return True
         else:
             return False

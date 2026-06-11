@@ -9,7 +9,6 @@ def create_inventory(filename):
     """
     books = []
     with open(filename, "r") as f:
-        # Reads a line of open file
         for line in f:
             list1 = line.split(",")
             if list1[0] == "title":
