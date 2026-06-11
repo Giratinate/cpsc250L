@@ -30,7 +30,10 @@ def total_inventory(books):
     """
     Return the total number of all books in inventory.
     """
-    return len(books)
+    total = 0
+    for book in books:
+        total += book.amount
+    return total
 
 
 def find_by_author(books, author):
