@@ -15,7 +15,7 @@ class Book:
         """
         Increase quantity by amount.
         """
-        pass
+        self.amount += amount
 
     def sell_copies(self, amount):
         """
@@ -24,10 +24,14 @@ class Book:
         Return True if the sale succeeds.
         Return False otherwise.
         """
-        pass
+        if amount < self.amount:
+            self.amount -= amount
+            return True
+        else:
+            return False
 
     def __str__(self):
-        pass
+        return f"{self.name} by {self.author} ({self.year}) - {self.genre}, {self.pages} pages, rating: {self.rating}, stock: {self.amount}"
 
     def __lt__(self, other):
         """
