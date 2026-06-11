@@ -14,7 +14,7 @@ def create_inventory(filename):
             if list1[0] == "title":
                 continue
             else:
-                books.append(Book(list1[0], list1[1], list1[2], list1[3], list1[4], list1[5]))
+                books.append(Book(list1[0], list1[1], list1[2], list1[3], list1[4], list1[5][0:3]))
     return books
 
 
