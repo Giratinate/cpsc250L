@@ -16,7 +16,6 @@ def create_inventory(filename):
                 continue
             else:
                 books.append(Book(list1[0], list1[1], list1[2], list1[3], list1[4], list1[5]))
-    print(books[0])
     return books
 
 
@@ -24,35 +23,45 @@ def print_inventory(books):
     """
     Print every book in the inventory.
     """
-    pass
+    for book in books:
+        print(book)
 
 
 def total_inventory(books):
     """
     Return the total number of all books in inventory.
     """
-    pass
+    return len(books)
 
 
 def find_by_author(books, author):
     """
     Return a list of books written by the specified author.
     """
-    pass
+    author_books = []
+    for book in books:
+        if book.author == author:
+            author_books.append(book)
+    return author_books
 
 
 def find_low_stock(books, threshold):
     """
     Return a list of books whose quantity is less than or equal to threshold.
     """
-    pass
+    low_stock = []
+    for book in books:
+        if book.amount <= threshold:
+            low_stock.append(book)
+    return low_stock
 
 
 def print_books(books):
     """
     Print a list of books.
     """
-    pass
+    for book in books:
+        print(book)
 
 
 def main():

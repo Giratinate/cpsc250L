@@ -31,7 +31,8 @@ class Book:
             return False
 
     def __str__(self):
-        return f"{self.title} by {self.author} ({self.year}) - {self.genre}, {self.pages} pages, rating: {self.rating}, stock: {self.amount}"
+        return (f"{self.title} by {self.author} ({self.year}) - {self.genre}, {self.pages} pages, rating:"
+                f" {self.rating}/5, stock: {self.amount}")
 
     def __lt__(self, other):
         """
