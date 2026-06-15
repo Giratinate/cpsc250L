@@ -8,6 +8,9 @@ def main():
         Flower("Marigold", 25, "orange"),
         Vegetable("Tomato", 80, 70),
         Vegetable("Lettuce", 20, 45),
+        Plant("Spanish Moss"),
+        Flower("Petunias"),
+        Vegetable("Carrots")
     ]
 
     print("Garden Inventory")
