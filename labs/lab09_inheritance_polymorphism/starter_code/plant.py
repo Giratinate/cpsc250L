@@ -7,7 +7,7 @@ class Plant:
         return "Water regularly and provide adequate sunlight."
 
     def __str__(self):
-        return f"Name: {self.name}, Height {self.height_cm}cm"
+        return f"Name: {self.name}; Height {self.height_cm}cm"
 
 
 class Flower(Plant):
@@ -20,7 +20,7 @@ class Flower(Plant):
         return "Water regularly, provide full sun, and deadhead spent blooms."
 
     def __str__(self):
-        return f"Name: {self.name}, Height: {self.height_cm}cm, Color: {self.color}"
+        return f"Name: {self.name}; Height: {self.height_cm}cm; Color: {self.color}"
 
 
 class Vegetable(Plant):
