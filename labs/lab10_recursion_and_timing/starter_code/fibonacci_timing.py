@@ -21,14 +21,18 @@ def fib_iterative(n):
             t3 = t1 + t2
             t1 = t2
             t2 = t3
-    pass
+        return t3
 
 
 def time_function(function, n):
+    import time
     # TODO: write this function - google the python time module to figure out how it works
     # TODO: start a timer, call the appropriate function, then stop the timer
+    start = time.perf_counter()
+    function(n)
+    end = time.perf_counter()
     # TODO: return the elapsed time
-    return 0
+    return end - start
 
 def main():
     values = [5, 10, 20, 25, 30, 35, 40]
