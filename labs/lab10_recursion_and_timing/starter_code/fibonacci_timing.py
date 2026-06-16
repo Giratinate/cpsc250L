@@ -1,12 +1,26 @@
 import time
 
-def fib_recursive(n)
-    # TODO: write this function
-    pass
+def fib_recursive(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib_recursive(n-1) + fib_recursive(n-2)
 
 
 def fib_iterative(n):
-    # TODO: write this function
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        t1 = 0
+        t2 = 1
+        for i in range(2, n+1):
+            t3 = t1 + t2
+            t1 = t2
+            t2 = t3
     pass
 
 
