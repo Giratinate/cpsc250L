@@ -29,7 +29,14 @@ def f(x):
 
 
 def bisection_root(function, left, right, tolerance):
-    pass
+    if abs(right - left) < tolerance:
+        return left
+    else:
+        middle = (left + right) / 2
+        if function(middle) * function(left) < 0:
+            return bisection_root(f, left, middle, tolerance)
+        else:
+            return bisection_root(f, middle, right, tolerance)
 
 
 def main():
