@@ -10,7 +10,6 @@ def linear_search(values, target):
 
 def binary_search(values, target, counter, computations):
     answer = 0
-    print("Computations:", computations)
     if target == values[len(values)//2]:
         computations += 1
         answer = len(values)//2 + counter
