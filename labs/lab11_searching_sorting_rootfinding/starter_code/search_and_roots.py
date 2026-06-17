@@ -8,8 +8,20 @@ def linear_search(values, target):
             comparisons += 1
 
 
-def binary_search(values, target):
-    pass
+def binary_search(values, target, counter, computations):
+    answer = 0
+    print("Computations:", computations)
+    if target == values[len(values)//2]:
+        computations += 1
+        answer = len(values)//2 + counter
+    elif target < values[len(values)//2]:
+        computations += 1
+        answer, computations = binary_search(values[0:len(values)//2], target, counter, computations)
+    elif target > values[len(values)//2]:
+        computations += 1
+        counter += len(values)//2
+        answer, computations = binary_search(values[len(values)//2:], target, counter, computations)
+    return answer, computations
 
 
 def f(x):
@@ -31,7 +43,7 @@ def main():
     print("Search Tests")
     print("------------")
     print("Linear search for ", search_value," --> (index,comps) = ", linear_search(values, search_value))
-    print("Binary search for ", search_value," --> (index,comps) = ", binary_search(values, search_value))
+    print("Binary search for ", search_value," --> (index,comps) = ", binary_search(values, search_value, 0, 0))
 
     print()
     print("Root Finding")
