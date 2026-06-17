@@ -1,5 +1,11 @@
 def linear_search(values, target):
-    pass
+    comparisons = 0
+    for i in values:
+        if i == target:
+            comparisons += 1
+            return values.index(i), comparisons
+        else:
+            comparisons += 1
 
 
 def binary_search(values, target):
@@ -20,7 +26,7 @@ def main():
     values.sort()
 
     # Find the 500th value in the list
-    search_value = values[499]
+    search_value = values[249]
 
     print("Search Tests")
     print("------------")
