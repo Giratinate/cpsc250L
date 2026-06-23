@@ -29,8 +29,10 @@ def add_celsius(df):
 
 def clean_temperature_range(df, t_low_cut, t_high_cut):
     # TODO: remove days where T_low < t_low_cut or T_high > t_high_cut
+    df = df[df["celsius high"] <= t_high_cut]
+    df = df[df["celsius low"] >= t_low_cut]
     # TODO: return modified dataframe
-    pass
+    return df
 
 
 def plot_temperatures(df):
@@ -49,7 +51,7 @@ def main():
     T_low_cut = 19.0
     T_high_cut = 31.0
     dataframe = clean_temperature_range(dataframe, T_low_cut, T_high_cut)
-
+    print(dataframe)
     print_summary(dataframe)
 
     plot_temperatures(dataframe)
