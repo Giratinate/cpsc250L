@@ -10,7 +10,13 @@ def load_weather_data(filename):
 
 def print_summary(df):
     # TODO: print summary statistics
+    print(df)
+    average_high = df["celsius high"].mean()
+    average_low = df["celsius low"].mean()
+    average = (average_high + average_low)/2
     # TODO: extract the mean temperature and print it
+
+    print("Average temperature in celsius:", average)
     pass
 
 def add_celsius(df):
@@ -47,11 +53,11 @@ def main():
     dataframe = load_weather_data(filename)
 
     dataframe = add_celsius(dataframe)
-    print(dataframe)
+
     T_low_cut = 19.0
     T_high_cut = 31.0
     dataframe = clean_temperature_range(dataframe, T_low_cut, T_high_cut)
-    print(dataframe)
+
     print_summary(dataframe)
 
     plot_temperatures(dataframe)
