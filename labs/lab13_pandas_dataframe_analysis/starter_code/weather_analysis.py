@@ -1,11 +1,11 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 
 
 def load_weather_data(filename):
     # TODO: load the data from csv file
     # TODO: return a Pandas dataframe
-    pass
+    database = pd.read_csv(filename)
+    return database
 
 
 def print_summary(df):
