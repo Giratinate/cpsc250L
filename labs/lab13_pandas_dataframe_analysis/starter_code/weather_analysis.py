@@ -1,4 +1,5 @@
 import pandas as pd
+from matplotlib import pyplot as plt
 
 
 def load_weather_data(filename):
@@ -43,6 +44,13 @@ def clean_temperature_range(df, t_low_cut, t_high_cut):
 
 def plot_temperatures(df):
     # TODO: plot both high and low temperatures on the same graph
+    plt.figure()
+    plt.title("Temperature in celsius")
+    plt.plot(df["celsius high"], label="high")
+    plt.plot(df["celsius low"], label="low")
+    plt.xlabel("Day")
+    plt.ylabel("Temperature in Celsius")
+    plt.show()
     pass
 
 
