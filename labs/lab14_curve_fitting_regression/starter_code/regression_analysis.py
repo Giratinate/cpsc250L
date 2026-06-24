@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import statsmodels.api as sm
+from scipy.optimize import curve_fit
 
 def load_data(filename):
     # TODO: load data in filename into pandas dataframe and return it
@@ -9,7 +11,7 @@ def load_data(filename):
 
 def fit_polyfit(df):
     # TODO: fit a first order polynomial and return slope and intercept
-    pass
+    return np.polyfit(df['hours'], df['score'], 1)
 
 def fit_statsmodel(df):
     # TODO: carry out a linear regression fit and return the results object
@@ -21,7 +23,7 @@ def fit_curve_fit(df):
 
 def predict(x, slope, intercept):
     # TODO: return y-values based on x, slope, intercept
-    pass
+    return slope * x + intercept
 
 def fitfunc(x, *param):
     # TODO: write a linear fit function for use with curve_fit
