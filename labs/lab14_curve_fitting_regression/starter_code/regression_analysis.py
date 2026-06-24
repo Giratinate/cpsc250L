@@ -24,7 +24,7 @@ def fit_statsmodel(df):
 def fit_curve_fit(df):
     # TODO: fit a first order polynonial and return slope, int, dslope, dint
     init_val = [0 for x in range(2)]
-    popt, pcov = curve_fit(fitfunc, df['hours'], df['score'], po=init_val, absolute_sigma=False)
+    popt, pcov = curve_fit(fitfunc, df['hours'], df['score'], p0=init_val, absolute_sigma=False)
     perr = np.sqrt(np.diag(pcov))
     slope = popt[0]
     intercept = popt[1]
@@ -38,7 +38,7 @@ def predict(x, slope, intercept):
 
 def fitfunc(x, *param):
     # TODO: write a linear fit function for use with curve_fit
-    pass
+    return param[0]*x + param[1]
 
 
 def main():
