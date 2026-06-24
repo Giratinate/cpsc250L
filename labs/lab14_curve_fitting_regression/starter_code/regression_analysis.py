@@ -15,11 +15,22 @@ def fit_polyfit(df):
 
 def fit_statsmodel(df):
     # TODO: carry out a linear regression fit and return the results object
-    pass
+    x = df['hours']
+    y = df['score']
+    x = sm.add_constant(x)
+    model = sm.OLS(y,x).fit()
+    return model
 
 def fit_curve_fit(df):
     # TODO: fit a first order polynonial and return slope, int, dslope, dint
-    pass
+    init_val = [0 for x in range(2)]
+    popt, pcov = curve_fit(fitfunc, df['hours'], df['score'], po=init_val, absolute_sigma=False)
+    perr = np.sqrt(np.diag(pcov))
+    slope = popt[0]
+    intercept = popt[1]
+    slope_error = perr[0]
+    intercept_error = perr[1]
+    return slope, intercept, slope_error, intercept_error
 
 def predict(x, slope, intercept):
     # TODO: return y-values based on x, slope, intercept
