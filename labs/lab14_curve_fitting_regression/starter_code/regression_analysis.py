@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 
 def load_data(filename):
     # TODO: load data in filename into pandas dataframe and return it
-    pass
+    database = pd.read_csv(filename)
+    return database
 
 def fit_polyfit(df):
     # TODO: fit a first order polynomial and return slope and intercept
